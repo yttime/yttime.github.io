@@ -1,0 +1,101 @@
+
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/go.min.js"></script>
+<!-- add custom theme -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Josefin Sans">
+<style>
+body {
+  font-family: "Poppins";
+}
+h1,h2 {
+   font-family: "Josefin Sans";
+}
+</style>
+<script src="https://unpkg.com/htmlincludejs"></script>
+</head>
+<h1>
+Stack data structure 
+</h1>
+Stack is last in last out.
+Five operations. peek(), push(), pop(), size(), isempty().
+
+<body>
+<pre>
+<code class="c++">
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int stk[100], top=-1,sz=99;
+
+bool isempty(){
+	return top== -1;
+}
+
+int peek(){
+	return stk[top];
+}
+void push(int data){
+	if (top == sz)
+	    cout<<"stack is overflow\n";
+	else
+	   stk[++top]=data;
+}
+
+void pop(){
+	if (top<0)
+	   cout<<"stack is underflow\n";
+	else
+	   --top;
+}
+
+int size(){
+	return top+1;
+}
+	
+	 
+
+
+
+}
+	
+	 
+
+
+int main(){
+	
+	push(100);
+	cout&lt;&lt;"top is: "&lt;&lt; peek()&lt;&lt;endl;
+	push(2);
+	push(3);
+	cout&lt;&lt;size();
+	pop();
+	cout&lt;&lt;"top is: "&lt;&lt; peek()&lt;&lt;endl;
+		
+	pop();
+	cout&lt;&lt;"top is: "&lt;&lt; peek()&lt;&lt;endl;
+	
+	pop();
+	pop();
+	isempty()?cout&lt;&lt;"empty":cout&lt;&lt;"not empty";
+	
+	return 0;
+}
+	
+	
+
+</code>
+</pre>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

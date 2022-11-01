@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/go.min.js"></script>
+<!-- add custom theme -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Josefin Sans">
+<style>
+body {
+  font-family: "Poppins";
+}
+h1,h2 {
+   font-family: "Josefin Sans";
+}
+</style>
+<script src="https://unpkg.com/htmlincludejs"></script>
+</head>
+
+
+
+<body>
+<h1>
+QUEUE
+</h1>
+<pre>
+<code>
+
+#include &lt;stdio.h&gt;
+
+int queue[10],rear,front;
+
+int isEmpty(){
+	return rear==front;
+}
+void enqueue(int item){
+	   queue[rear++]=item;
+}
+
+int dequeue(){
+	   if(rear>0)
+	       return queue[front++];
+	   else
+	       return 0;
+}
+
+int main(){
+	printf("%d\n",dequeue());
+	enqueue(10);
+	enqueue(12);
+	enqueue(13);
+	printf("%d\n",dequeue());
+	printf("%d\n",dequeue());
+	printf("%d\n",dequeue());
+		
+	return 0;
+}
+
+</code>
+</pre>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
